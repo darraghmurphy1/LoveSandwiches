@@ -52,4 +52,15 @@ def validate_data(values):
     return True
 
 
+def update_sales_worksheet(data):
+    """
+    update sales worksheet, add new row with list data provided
+    """
+    print("updating...\n")
+    sales_worksheet = SHEET.worksheet('sales')
+    sales_worksheet.append_row(data)
+    print("success.\n")
+    
+
 data = get_sales_data()
+sales_data = [int(num) for num in data]
